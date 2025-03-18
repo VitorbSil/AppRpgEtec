@@ -60,8 +60,8 @@ namespace AppRpgEtec.ViewModels.Usuarios
             try
             {
                 Usuario u = new Usuario();
-                u.Username = login;
-                u.PasswordString = senha;
+                u.Username = Login;
+                u.PasswordString = Senha;
 
                 Usuario uAutenticado = await uService.PostAutenticarUsuarioAsync(u);
 
