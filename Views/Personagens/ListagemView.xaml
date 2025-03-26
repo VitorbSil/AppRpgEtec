@@ -3,6 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppRpgEtec.Views.Personagens.ListagemView"
              Title="ListagemView">
+    <Shell.TitleView>
+        <Button Command="{Binding NovoPersonagemCommand}" Text="Novo Personagem" HorizontalOptions="End" WidthRequest="250"/>
+    </Shell.TitleView>
     <ScrollView>
         <VerticalStackLayout Padding="10, 0, 0, 0" VerticalOptions="FillAndExpand">
             <ListView x:Name="listView" HasUnevenRows="True" ItemsSource="{Binding Personagens}" >
@@ -12,6 +15,8 @@
                             <StackLayout Padding="10">
                                 <Label Text="{Binding Nome}" FontSize="18" FontAttributes="Bold"/>
                                 <Label Text="{Binding PontosVida}" FontSize="14"/>
+                                <Label Text="{Binding Forca}" FontSize="14"/>
+                                <Label Text="{Binding Defesa}" FontSize="14"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
