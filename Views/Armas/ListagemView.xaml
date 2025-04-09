@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppRpgEtec.Views.Armas.ListagemView"
+             Title="ListagemView">
+    <Shell.TitleView>
+        <Button Command="{Binding NovaArmaCommand}" Text="Nova Arma" HorizontalOptions="End" WidthRequest="250"/>
+    </Shell.TitleView>
+    <ScrollView>
+        <VerticalStackLayout Padding="10, 0, 0, 0" VerticalOptions="FillAndExpand">
+            <ListView x:Name="listView" HasUnevenRows="True" ItemsSource="{Binding Armas}"
+                      SelectedItem="{Binding ArmaSelecionada}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding Nome}" FontSize="18" FontAttributes="Bold"/>
+                                <Label Text="{Binding Dano}" FontSize="14"/>
+                                <Label Text="{Binding PersonagemId}" FontSize="14"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

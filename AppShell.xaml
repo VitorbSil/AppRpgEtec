@@ -5,12 +5,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:AppRpgEtec"
     xmlns:viewsPersonagens="clr-namespace:AppRpgEtec.Views.Personagens"
+    xmlns:viewsArmas="clr-namespace:AppRpgEtec.Views.Armas"
     Shell.FlyoutBehavior="Disabled"
     Title="AppRpgEtec">
 
     <ShellContent
         Title="Home"
-        ContentTemplate="{DataTemplate viewsPersonagens:ListagemView}"
+        ContentTemplate="{DataTemplate viewsArmas:ListagemView}"
         Route="MainPage" />
 
 </Shell>
