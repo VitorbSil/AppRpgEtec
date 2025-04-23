@@ -1,8 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-	<application android:allowBackup="true" android:icon="@mipmap/has_logo_transparente"
-				 android:roundIcon="@mipmap/has_logo_transparente_round"
-				 android:supportsRtl="true"></application>
+	<application android:allowBackup="true"
+		         android:supportsRtl="true">
+
+
+		<meta-data android:name="com.google.android.geo.API_KEY"
+				   android:value="AIzaSyDFczn3694F_oCPQF6mBuRLdH7vowSY3Cs">
+		</meta-data>
+
+	</application>
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
 </manifest>
+
+<!--android:icon="@mipmap/has_logo_transparente"
+android:roundIcon="@mipmap/has_logo_transparente_round"-->
