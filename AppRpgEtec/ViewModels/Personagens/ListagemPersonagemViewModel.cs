@@ -202,7 +202,7 @@ namespace AppRpgEtec.ViewModels.Personagens
             try
             {
                 if(await Application.Current.MainPage.DisplayAlert("Confirmação",
-                    $"Deseja realmente zerar todo o ranking?", "Yes", "No"))
+                    "Deseja realmente zerar todo o ranking?", "Yes", "No"))
                 {
                     await ExecutarZerarRankingRestaurarVidasGeral();
 
@@ -215,7 +215,7 @@ namespace AppRpgEtec.ViewModels.Personagens
             catch (Exception ex)
             {
                 await Application.Current.MainPage
-                    .DisplayAlert("Ops", ex.Message + " Detalhes: " + ex.InnerException, "Ok");
+                    .DisplayAlert("Ops", ex.Message + "Detalhes: " + ex.InnerException, "Ok");
             }
         }
 
