@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppRpgEtec.Views.Personagens.ListagemView"
+             xmlns:conv="clr-namespace:AppRpgEtec.Converters"
+             Title="ListagemView">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <conv:PontosVidaConverter x:Key="ColorConvert"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Shell.TitleView>
+        <Button Command="{Binding NovoPersonagemCommand}" Text="Novo" HorizontalOptions="FillAndExpand"></Button>
+    </Shell.TitleView>
+
+    <ScrollView>
+
+      
+        
+        <VerticalStackLayout Padding="10, 0, 0, 0" VerticalOptions="FillAndExpand">
+
+            <Button Text="Zerar Ranking Geral" Command="{Binding ZerarRankingRestaurarVidasGeralCommand}"
+                    FontAttributes="Bold" VerticalOptions="FillAndExpand"/>
+            
+            <ListView x:Name="listView" HasUnevenRows="True" ItemsSource="{Binding Personagens}" 
+           SelectedItem="{Binding PersonagemSelecionado}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Remover" IsDestructive="True"                                          
+                         Command="{Binding Path=BindingContext.RemoverPersonagemCommand, Source={x:Reference listView}}"
+                         CommandParameter="{Binding .}"></MenuItem>
+                            </ViewCell.ContextActions>
+                            <Grid Padding="15">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <BoxView Grid.RowSpan="2" HeightRequest="50" WidthRequest="20"
+                                    Color="{Binding PontosVida, Converter={StaticResource ColorConvert}}"/>
+
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Nome}" FontSize="18" FontAttributes="Bold"/>
+                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding PontosVida}" FontSize="14"/>
+                            </Grid>           
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

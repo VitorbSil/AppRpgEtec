@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppRpgEtec.Views.Armas.CadastroArmaView"
+             Title="CadastroArmaView">
+    <VerticalStackLayout>
+        <ScrollView>
+            <VerticalStackLayout Spacing="3" Padding="15">
+                <Label Text="Id" FontSize="Medium" />
+                <Entry Text="{Binding Id}" IsEnabled="False" FontSize="Medium" />
+
+                <Label Text="Nome" FontSize="Medium" />
+                <Entry Text="{Binding Nome}"  FontSize="Medium" />
+
+                <Label Text="Dano" FontSize="Medium" />
+                <Entry Text="{Binding Dano}"  FontSize="Medium" Keyboard="Numeric" />
+
+                <Label Text="Personagem" FontSize="Medium" />
+                <Picker Title="---Selecione o personagem---"  
+              ItemsSource="{Binding Personagens}" 
+              ItemDisplayBinding="{Binding Nome}" 
+              SelectedItem="{Binding PersonagemSelecionado}" />
+
+                <HorizontalStackLayout>
+                    <Button Text="Salvar" Command="{Binding SalvarCommand}" HorizontalOptions="FillAndExpand"></Button>
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </VerticalStackLayout>
+</ContentPage>
